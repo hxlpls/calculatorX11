@@ -1,0 +1,79 @@
+<Window x:Class="calculatorX11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculatorX11"
+        mc:Ignorable="d"
+        Title="calculatorX11" Height="680" Width="420"
+        ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Background="#1F2430">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="18" Background="#2B3040" Margin="0,0,0,12">
+            <TextBox x:Name="DisplayBox"
+                     IsReadOnly="True"
+                     Focusable="False"
+                     Text="0"
+                     FontSize="42"
+                     FontWeight="SemiBold"
+                     Foreground="White"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     Padding="18,20,18,18"
+                     TextAlignment="Right"
+                     VerticalContentAlignment="Center"/>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Content="C" Tag="C" Click="ClearButton_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Grid.Row="0" Grid.Column="1" Content="⌫" Tag="Backspace" Click="BackspaceButton_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Grid.Row="0" Grid.Column="2" Content="%" Tag="%" Click="PercentButton_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Grid.Row="0" Grid.Column="3" Content="÷" Tag="/" Click="OperatorButton_Click" Style="{StaticResource OperatorButtonStyle}" />
+
+            <Button Grid.Row="1" Grid.Column="0" Content="7" Tag="7" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="1" Grid.Column="1" Content="8" Tag="8" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="1" Grid.Column="2" Content="9" Tag="9" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="1" Grid.Column="3" Content="×" Tag="*" Click="OperatorButton_Click" Style="{StaticResource OperatorButtonStyle}" />
+
+            <Button Grid.Row="2" Grid.Column="0" Content="4" Tag="4" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="2" Grid.Column="1" Content="5" Tag="5" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="2" Grid.Column="2" Content="6" Tag="6" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="2" Grid.Column="3" Content="−" Tag="-" Click="OperatorButton_Click" Style="{StaticResource OperatorButtonStyle}" />
+
+            <Button Grid.Row="3" Grid.Column="0" Content="1" Tag="1" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="3" Grid.Column="1" Content="2" Tag="2" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="3" Grid.Column="2" Content="3" Tag="3" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="3" Grid.Column="3" Content="+" Tag="+" Click="OperatorButton_Click" Style="{StaticResource OperatorButtonStyle}" />
+
+            <Button Grid.Row="4" Grid.Column="0" Content="±" Tag="±" Click="ToggleSignButton_Click" Style="{StaticResource CalculatorButtonStyle}" />
+            <Button Grid.Row="4" Grid.Column="1" Content="0" Tag="0" Click="NumberButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="4" Grid.Column="2" Content="." Tag="." Click="DecimalButton_Click" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="4" Grid.Column="3" Content="=" Tag="=" Click="EqualsButton_Click" Style="{StaticResource EqualsButtonStyle}" />
+
+            <Button Grid.Row="5" Grid.Column="0" Content="sin" Tag="sin" Click="UnaryFunctionButton_Click" Style="{StaticResource SpecialButtonStyle}" />
+            <Button Grid.Row="5" Grid.Column="1" Content="cos" Tag="cos" Click="UnaryFunctionButton_Click" Style="{StaticResource SpecialButtonStyle}" />
+            <Button Grid.Row="5" Grid.Column="2" Content="tan" Tag="tan" Click="UnaryFunctionButton_Click" Style="{StaticResource SpecialButtonStyle}" />
+            <Button Grid.Row="5" Grid.Column="3" Content="√" Tag="sqrt" Click="UnaryFunctionButton_Click" Style="{StaticResource SpecialButtonStyle}" />
+        </Grid>
+    </Grid>
+</Window>
